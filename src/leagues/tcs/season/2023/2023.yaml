@@ -1,0 +1,27 @@
+---
+league:
+  teams:
+    - name: team1
+      website: google
+      shortname: foo1
+    - name: team2
+      website: google
+      shortname: foo2
+    - name: team3
+      website: google
+      shortname: foo1
+    - name: team4
+      website: google
+      shortname: foo2
+    - name: team5
+      website: google
+      shortname: foo1
+    - name: team6
+      website: google
+      shortname: foo2
+    - name: team7
+      website: google
+      shortname: foo1
+    - name: team8
+      website: google
+      shortname: foo2

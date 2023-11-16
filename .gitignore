@@ -1,2 +1,16 @@
-node_modules
-_site
+# Node modules
+node_modules/
+
+# generated files
+dist/
+
+# cache
+.cache
+
+# secret data
+.env
+
+# misc
+.DS_Store
+scratch/
+daisy

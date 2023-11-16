@@ -1,0 +1,20 @@
+---
+layout: base
+---
+{# layout for a league and listing of seasons #}
+<div class="max-w-prose mx-auto xl:my-8 my-4 xl:text-xl">
+  <article class="mt-6 prose prose-slate mx-auto xl:prose-xl px-2">
+    <h1>{{ name }}</h1>
+    <h4><a href="{{ homepage }}" target="_blank">Homepage</a></h4>
+    <h4><a href="{{ results }}" target="_blank">Results Page</a></h4>
+    <p>{{ description }}</p>
+  </article>
+  <div class="flex flex-col w-full">
+    <div class="divider divider-primary">Season Listing</div>
+    <ul class="menu menu-lg bg-base-300 w-full rounded-box">
+      {% for season in seasons %}
+      <li><a href="{{ season.url }}">{{ season.data.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

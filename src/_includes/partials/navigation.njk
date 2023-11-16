@@ -1,0 +1,96 @@
+ <nav class="navbar">
+  {% set navPages = collections.all | eleventyNavigation %}
+  <div class="navbar-start">
+    <div class="dropdown">
+      <label tabindex="0" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"/> </svg>
+      </label>
+      <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-300 mt-3 z-[1] p-2 shadow rounded-box w-52">
+        {% for entry in navPages %}
+          <li>
+            <a {% if entry.url == page.url %} class="active" {% endif %} href="{{ entry.url }}">{{ entry.title }}</a>
+          </li>
+          {% if entry.children.length %}
+            <ul class="p-2">
+              {% for child in entry.children %}
+                <li>
+                  <a {% if child.url in page.url %} class="active" {% endif %} href="{{ child.url }}">{{ child.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    <a class="btn btn-ghost normal-case text-xl" href="/">{{ site.title }}</a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      {% for entry in navPages %}
+        {% if entry.children.length %}
+          <div class="dropdown dropdown-hover">
+            <li class="px-1">
+              <a {% if entry.url == page.url %} class="active" {% endif %} href="{{ entry.url }}">{{ entry.title }}
+                <svg
+                  width="12px"
+                  height="12px"
+                  class="h-2 w-2 fill-current opacity-60 inline-block"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 2048 2048">
+                  <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+                </svg>
+              </a>
+            </li>
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-300 rounded-box w-52">
+              {% for child in entry.children %}
+                <li>
+                  <a {% if child.url in page.url %} class="active" {% endif %} href="{{ child.url }}">{{ child.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% else %}
+          <li class="px-1">
+            <a {% if entry.url == page.url %} class="active" {% endif %} href="{{ entry.url }}">{{ entry.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <svg
+      class="h-8 pr-4"
+      alt="logo"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      stroke="currentColor"
+      color="currentColor">
+      <path
+        d="M3 15C5.48276 15 7.34483 12 7.34483 12C7.34483 12 9.2069 15 11.6897 15C14.1724 15 16.6552 12 16.6552 12C16.6552 12
+          19.1379 15 21 15"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+      <path
+        d="M3 20C5.48276 20 7.34483 17 7.34483 17C7.34483 17 9.2069 20 11.6897 20C14.1724 20 16.6552 17 16.6552 17C16.6552 17
+          19.1379 20 21 20"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+      <path
+        d="M5 10.5L9 8L7.81306 6.51633C7.36819 5.96024 7.47151 5.14637 8.04123 4.71908V4.71908C8.57851 4.31612 9.33729 4.40475
+          9.76724 4.92069L14 10"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+      <path
+        d="M16.5 8C17.8807 8 19 6.88071 19 5.5C19 4.11929 17.8807 3 16.5 3C15.1193 3 14 4.11929 14 5.5C14 6.88071 15.1193 8 16.5
+          8Z"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>
+  </div>
+</nav>

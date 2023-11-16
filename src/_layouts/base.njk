@@ -1,0 +1,37 @@
+{# Base Site Layout #}
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta
+    name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- title -->
+    <title>
+      {% if title %}
+        {{ title }} |
+      {% endif %}
+      {{ site.title }}</title>
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link
+    rel="icon" type="image/svg+xml" href="/assets/images/meta/favicon.svg"> <!--  meta stuff  -->
+    <meta name="theme-color" content="{{ site.themeColor }}"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="googlebot" content="index,follow"/>
+    <meta
+    name="generator" content="{{ eleventy.generator }}"/> <!-- Disable automatic detection and formatting of possible phone numbers -->
+    <meta
+    name="format-detection" content="telephone=no"/>
+    <!-- deferred js  -->
+    <script type="module" src="/assets/js/global.js" defer></script>
+  </head>
+  <body>
+    {% include "partials/navigation.njk" %}
+    <main>
+      <div class="min-h-screen flex flex-col relative overflow-hidden">
+        {{ content | safe }}
+      </div>
+    </main>
+    {% include "partials/footer.njk" %}
+  </body>
+</html>

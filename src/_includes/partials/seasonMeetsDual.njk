@@ -1,0 +1,44 @@
+{# Figure out if its a gendered week or all doubles #}
+{% if event.girls and event.boys %}
+  {% set girls = event.girls %}
+  {% set boys = event.boys %}
+  {% set genderMeets = true %}
+{% endif %}
+
+{# Init double duals if we have any #}
+{% if event.doubles %}
+  {% set doubles = event.doubles %}
+{% endif %}
+
+{% import "../macros/meets.njk" as macros %}
+
+<table class="table-fixed w-full not-prose text-center">
+  <thead>
+    <tr class="table-row border-neutral border-b-2 bg-neutral-700">
+      {# Two columns if gendered, one if not. #}
+      {% if genderMeets %}
+        <th class="border border-neutral-600">Girls</th>
+        <th class="border border-neutral-600">Boys</th>
+      {% else %}
+        <th>Double Duals</th>
+      {% endif %}
+    </tr>
+  </thead>
+  <tbody>
+    {% if genderMeets %}
+    <tr class="table-row">
+      <td class="border border-neutral-600 p-0">
+        {{ macros.listGenderMeets(girls, event, page) }}
+      </td>
+      <td class="border border-neutral-600 p-0">
+        {{ macros.listGenderMeets(boys, event, page) }}
+      </td>
+    </tr>
+      {% if doubles %}
+        {{ macros.listDoubleMeets(doubles, event, page) }}
+      {% endif %}
+    {% else %}
+      {{ macros.listDoubleMeets(doubles, event, page, true) }}
+    {% endif %}
+  </tbody>
+</table>

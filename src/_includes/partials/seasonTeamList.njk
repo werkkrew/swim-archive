@@ -1,0 +1,12 @@
+<h3 class="prose prose-xl text-center">League Structure</h3>
+{% set leagueStructure = league | first %}
+{% if leagueStructure == 'conferences' %}
+  {% include "partials/seasonConferencesDivider.njk" %}
+{% elseif leagueStructure == 'divisions' %}
+  {% include "partials/seasonDivisionsTable.njk" %}
+{% elseif leagueStructure == 'teams' %}
+  {% set teams = league.teams %}
+  {% include "partials/seasonTeamsTable.njk" %}
+{% else %}
+  <h1>This condition should not happen.</h1>
+{% endif %}

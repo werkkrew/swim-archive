@@ -1,0 +1,5 @@
+{% set conferences = league.conferences %}
+{% for conference in conferences %}
+  <div class="divider divider-primary capitalize py-4">{{ conference.name }} Conference</div>
+  {% include "partials/seasonDivisionsTable.njk" %}
+{% endfor %}

@@ -1,0 +1,70 @@
+{# Macros for displaying swim meets and meet related things #}
+
+{# Figure out if there is an existing results file, if so, link to it. If not, show a tooltip. #}
+{% macro resultLink(event, meet, gender, page, raw=false) %}
+  {% set relative = "results/" %}
+  {% set path = page.inputPath | replace("index.njk", relative) %}
+  {% set filename = event.date | formatDateUTC('YYYY-MM-DD') + "_" + gender.name + "_" + meet.home | upper + "vs" + meet.away | upper + ".html" %}
+  
+  {% set fileabs = path + filename %}
+
+  {% if raw %}
+    {% set link = relative + filename %}
+  {% else %}
+    {% set link = relative + filename | replace(".html", "/") %}
+  {% endif %}
+
+  {% if fileabs | fileExists %}
+    <a href="{{ link }}" target="_blank" class="link link-hover link-success">{{ meet.home | upper }} vs. {{ meet.away | upper }}</a>
+  {% else %}
+    <div class="tooltip tooltip-error" data-tip="Results not found.">
+      <a href="" class="link link-hover link-error" onclick="return false;">{{ meet.home | upper }} vs. {{ meet.away | upper }}</a>
+    </div>
+  {% endif %}
+{% endmacro %}
+
+
+{# list all meets for a given event and gender by division #}
+{% macro listGenderMeets(gender, event, page, site) %}
+  <table class="table-auto w-full not-prose text-center border-0">
+    {% for division in gender.division %}
+      <tr>
+        <td class="capitalize {{ "bg-neutral-700" if division.name == "crossover" else "bg-neutral-600" }}">{{ division.name }}</td>
+      </tr>
+      {% for meet in division.meets %}
+        <tr>
+          <td class="hover:bg-neutral-800 hover:text-neutral-content">{{ resultLink(event, meet, gender, page) }}</td>
+        </tr>
+      {% endfor %}
+    {% endfor %}
+  </table>
+{% endmacro %}
+
+{# list all "double dual" meets for a given event #}
+{% macro listDoubleMeets(doubles, event, page, only=false) %}
+  {% if not only %}
+    <tr colspan="2">
+      <th>Double Duals</th>
+    </tr>
+    {% for division in doubles.division %}
+      <tr colspan="2">
+        <th colspan="2">{{ division.name }}</th>
+      </tr>
+      {% for meet in division.meets %}
+        <tr colspan="2">
+          <td>{{ meet.home }} vs. {{ meet.away }}</td>
+        </tr>
+      {% endfor %}
+    {% endfor %}
+  {% elseif only %}
+    {% for division in doubles.division %}
+      <tr>
+        <th>{{ division.name }}</th>
+      </tr>
+      {% for meet in division.meets %}
+        <tr>
+          <td>{{ meet.home }} vs. {{ meet.away }}</td></tr>
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
+{% endmacro %}

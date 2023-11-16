@@ -1,15 +1,58 @@
 {
   "name": "swim-archive",
   "version": "1.0.0",
-  "description": "An archive of swim meet results.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "license": "GPL-3.0-or-later",
+  "author": {
+    "name": "Bryan Chain",
+    "email": "werkkrew@gmail.com",
+    "url": "https://bryanchain.com/"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "main": "eleventy.config.js",
+  "engines": {
+    "node": ">=16.x.x"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "dev:11ty": "eleventy --serve --watch",
+    "build:11ty": "eleventy",
+    "start": "run-p dev:*",
+    "build": "run-s clean build:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/werkkrew/swim-archive.git"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^3.0.0",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@tailwindcss/typography": "^0.5.2",
+    "daisyui": "^4.0.3",
+    "tailwindcss": "^3.3.5"
+  },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "alpinejs": "^3.13.2",
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1",
+    "dayjs": "^1.11.10",
+    "dayjs-plugin-utc": "^0.1.2",
+    "esbuild": "^0.19.2",
+    "esthetic": "^0.6.4-beta.1",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21",
+    "markdown-it": "^13.0.2",
+    "markdown-it-abbr": "^1.0.4",
+    "markdown-it-anchor": "^8.6.7",
+    "markdown-it-emoji": "^2.0.2",
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-link-attributes": "^4.0.1",
+    "markdown-it-mark": "^3.0.1",
+    "markdown-it-prism": "^2.3.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.31",
+    "postcss-import": "^15.1.0",
+    "postcss-js": "^4.0.1",
+    "rimraf": "^5.0.5",
+    "slugify": "^1.6.6"
   }
 }

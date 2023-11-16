@@ -1,0 +1,21 @@
+article [href^='http']:not([href*='localhost']) {
+    padding-inline-end: 0.8em;
+}
+  
+article
+    [href^='http']:not([href*='localhost'], .no-indicator)::after {
+    position: absolute;
+    display: inline-block;
+    inline-size: 1em;
+    block-size: 1em;
+    background-image: url('/assets/images/icons/icn-external.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60% auto;
+
+    /* alternative text rules */
+    content: '(external link)';
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 1em; /* the width of the icon */
+}

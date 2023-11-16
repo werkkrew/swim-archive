@@ -1,0 +1,14 @@
+{% if leagueStructure == 'teams' %}
+  {% set teams = league.teams %}
+{% else %}
+  {% set teams = division.teams %}
+{% endif %}
+<table class="table-auto w-full not-prose text-center border-collapse">
+  {% for team in teams %}
+    <tr class="table-row border-neutral border-b last:border-b-0">
+      <td class="bg-neutral-600 text-left text-lg text-neutral-content hover:bg-neutral-500 hover:text-neutral-200 p-2">
+        <a href="{{ team.website }}" target="_blank">{{ team.name }} ({{ team.code }})</a>
+      </td>
+    </tr>
+  {% endfor %}
+</table>

@@ -1,0 +1,34 @@
+---
+layout: base
+---
+{# layout for a swim season #}
+
+{% import "macros/utils.njk" as utils %}
+
+<div class="max-w-1/2 mx-auto xl:my-8 my-4 xl:text-xl">
+  <article class="mt-6 prose prose-slate mx-auto xl:prose-xl px-2">
+    <h1 class="text-center">{{ name }}</h1>
+    {% if league %}
+      {% if results %}
+        <h4 class="text-center"><a class="link link-hover link-primary" href="{{ results }}" target="_blank">Results on SAL Site</a></h4>
+      {% endif %}
+      {% include "partials/seasonTeamList.njk" %}
+    {% endif %}
+    {% if events %}
+      {% if notes %}
+        {{ utils.alertInfo(notes) }}
+      {% endif %}
+      <h3 class="text-center">Meets and Results</h3>
+      {% for event in events | sort(false, false,attribute='date') %}
+      <div class="divider divider-primary capitalize py-4">{{ event.name }}</div>
+        {% if event.type == 'dual' %}
+          {% include "partials/seasonMeetsDual.njk" %}
+        {% elseif event.type == 'invite' %}
+          {% include "partials/seasonMeetsInvite.njk" %}
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {{ utils.alertWarning("There have been no meets entered for this season. Please check back later or contact me if you can help me locate the data!") }}
+    {% endif %}
+  </article>
+</div>

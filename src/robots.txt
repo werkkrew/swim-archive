@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://archive.pvaquatic.com
+
+# Sitemaps
+Sitemap: https://archive.pvaquatic.com/sitemap.xml

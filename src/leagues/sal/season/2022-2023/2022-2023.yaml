@@ -1,0 +1,179 @@
+league:
+  conferences:
+    - name: american
+      divisions:
+        - name: east
+          teams:
+            - name: Centennial Aquatics Club
+              code: CAC
+              website: http://www.centennialaquaticclub.org/
+            - name: Council Rock Community Aquatics
+              code: CR
+              website: https://www.crsd.org/aquatics
+            - name: Dolphins Community Aquatics Association
+              code: DCAA
+              website: https://www.dcaaswimming.org/
+            - name: Lower Moreland Swimming
+              code: LMOR
+              website: https://www.lmswim.com/
+            - name: Neshaminy Core Swimming
+              code: CORE
+              website: https://coreswimming.com
+            - name: Norristown Area Aquatic Club
+              code: NAAC
+              website: https://www.gomotionapp.com/team/usapanaac/page/home
+        - name: central
+          teams:
+            - name: Central Bucks Swim Team
+              code: CBST
+              website: https://cbswimanddive.com/
+            - name: Colonial Community Aquatics
+              code: CCA
+              website: https://www.gomotionapp.com/team/macca/page/home
+            - name: Hatboro-Horsham Aquatics Association
+              code: HHAA
+              website: https://www.gomotionapp.com/team/mahha/page/home
+            - name: Springfield Aquatic Club
+              code: SAC
+              website: https://www.gomotionapp.com/team/masac/page/home
+            - name: Upper Dublin Aquatic Club
+              code: UDAC
+              website: https://www.gomotionapp.com/team/maudac/page/home
+    - name: national
+      divisions:
+        - name: northwest
+          teams:
+            - name: Methacton Aquatic Club
+              code: MAC
+              website: https://www.teamunify.com/Home.jsp?team=mamac
+            - name: North Penn Aquatic Club
+              code: NPAC
+              website: https://www.teamunify.com/Home.jsp?team=manpac
+            - name: Pennridge Aquatic Club
+              code: PAC
+              website: https://www.gomotionapp.com/team/recpapac/page/home
+            - name: Perkiomen Valley Aquatic Club
+              code: PVAC
+              website: https://pvaquatic.com
+            - name: Souderton Area Community Aquatic Club
+              code: SACAC
+              website: https://www.soudertonseahawks.com/page/home
+            - name: Pottstown-Upper Perkiomen Swimming
+              code: TOPS
+              website: https://www.gomotionapp.com/team/matops/page/home
+        - name: southwest
+          teams:
+            - name: Lower Merion Aquatic Club
+              code: LMAC
+              website: https://www.gomotionapp.com/team/malmac/page/home
+            - name: Plymouth-Whitemarsh Aquatic Club
+              code: PWAC
+              website: https://www.gomotionapp.com/team/mapwac/page/home
+            - name: Radnor Aquatic Club
+              code: RAC
+              website: https://www.gomotionapp.com/team/marac/page/home
+            - name: Upper Merion Aquatic Club
+              code: UMAC
+              website: https://www.gomotionapp.com/team/mauma/page/home
+            - name: Wissahickon Aquatic Club
+              code: WCAC
+              website: https://www.gomotionapp.com/team/mawaac/page/home
+events:
+  - name: First Dual Meets
+    type: dual
+    date: 2022-10-29
+    girls:
+      name: girls
+      division:
+        - name: central
+          meets:
+            - home: cbst
+              away: udac
+              results: true
+        - name: east
+          meets:
+            - home: cac
+              away: naac
+              results: false
+        - name: northwest
+          meets:
+            - home: mac
+              away: npac
+              results: true
+            - home: tops
+              away: sacac
+              results: false
+        - name: southwest
+          meets:
+            - home: wcac
+              away: lmac
+              results: false
+        - name: crossover
+          meets:
+            - home: core
+              away: umac
+              results: false
+            - home: cr
+              away: pwac
+              results: true
+            - home: lmsd
+              away: sac
+              results: false
+            - home: dcaa
+              away: hhaa
+              results: true
+            - home: cca
+              away: pac
+            - home: pvac
+              away: rac
+              results: false
+    boys:
+      name: boys
+      division:
+        - name: central
+          meets:
+            - home: cbst
+              away: udac
+              results: true
+        - name: east
+          meets:
+            - home: cac
+              away: naac
+              results: false
+        - name: northwest
+          meets:
+            - home: npac
+              away: mac
+              results: false
+            - home: sacac
+              away: tops
+              results: false
+        - name: southwest
+          meets:
+            - home: lmac
+              away: wcac
+              results: true
+        - name: crossover
+          meets:
+            - home: core
+              away: umac
+              results: false
+            - home: pwac
+              away: cr
+              results: true
+            - home: lmsd
+              away: sac
+              results: false
+            - home: hhaa
+              away: dcaa
+              results: false
+            - home: pac
+              away: cca
+              results: true
+            - home: pvac
+              away: rac
+              results: false
+  - name: Invitational - PVAC Fall Fest
+    type: invite
+    date: 2022-10-30
+    results: true
