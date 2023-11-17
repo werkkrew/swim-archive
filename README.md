@@ -4,11 +4,17 @@ This project started out as a means of me collecting and archiving swim meet res
 For now, I am archiving the data for the teams I am personally involved with and sharing them here for posterity.
 
 ## Initial Goals
- [ ] Present a complete online archive of swim meet results for the [Perkiomen Valley Aquatic Club](https://pvaquatic.com), including USA meets.
- [ ] Present a complete online archive of swim meet results for the [Suburban Aquatic League](https://suburbanaquatic.org).
-   [ ] Notate changes in division, teams, etc. year over year.
-   [ ] Provide interesting links to the team website as they were during the year of the season.
- [ ] Present a complete online archive of swim meet results for the [Tri-County Swim League](https://tricountyswim.net).
+ - [ ] Present a complete online archive of swim meet results for the [Perkiomen Valley Aquatic Club](https://pvaquatic.com), including USA meets.
+ - [ ] Present a complete online archive of swim meet results for the [Suburban Aquatic League](https://suburbanaquatic.org).
+   - [ ] Notate changes in division, teams, etc. year over year.
+   - [ ] Provide interesting links to the team website as they were during the year of the season?
+ - [ ] Present a complete online archive of swim meet results for the [Tri-County Swim League](https://tricountyswim.net).
+ - [ ] Fully functional without any javascript
+ - [ ] Additional JS based features
+   - [ ] Scroll back to top button
+   - [ ] Filter / Highlight Season by Team
+   - [ ] Theme Switcher?
+ - [ ] Contact form
 
 ## Future Plans
  - Parse the results files and maintain an actual database with the information contained within to provide a:
