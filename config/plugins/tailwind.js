@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-process CSS files with postcss, tailwind, and cssnano
+Process CSS files with postcss, tailwind, and cssnano
 ---------------------------------------------------------------------------- */
 
 const postcss = require('postcss');

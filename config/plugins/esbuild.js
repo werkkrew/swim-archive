@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-process JS files with esbuild
+Process JS files with esbuild
 ---------------------------------------------------------------------------- */
 const esbuild = require('esbuild');
 const path = require('node:path');

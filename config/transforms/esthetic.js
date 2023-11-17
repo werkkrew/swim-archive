@@ -1,3 +1,8 @@
+/* ----------------------------------------------------------------------------
+Custom process outputted HTML through esthetic to clean up whitespace
+and indentation for readablility.
+---------------------------------------------------------------------------- */
+
 const esthetic = require('esthetic');
 
 module.exports = function(eleventyConfig) {

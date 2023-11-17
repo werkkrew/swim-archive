@@ -1,3 +1,7 @@
+/* ----------------------------------------------------------------------------
+Custom 11ty collections
+---------------------------------------------------------------------------- */
+
 /** All Seasons for each league */
 const usaSeasons = collection => {
   return collection.getFilteredByTags("season", "usa");

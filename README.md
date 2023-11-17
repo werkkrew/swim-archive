@@ -37,10 +37,11 @@ Without the below this project would not be possible:
 ### This project was built with
  - [11ty](https://www.11ty.dev) - For Static Site Generation
  - [Nunjucks](https://mozilla.github.io/nunjucks/) - For Templating
- - [ESbuild](https://esbuild.github.io/) - For JS building and bundling
+ - [Markdown-it](https://markdown-it.github.io/) - For more advanced markdown processing, plus a number of plugins
  - [Tailwind CSS](https://tailwindcss.com/) - For CSS
  - [Tailwind Typography](https://tailwindcss.com/docs/typography-plugin) - For Typography
  - [Daisy UI](https://daisyui.com) - For UI Elements
  - [Alpine.js](https://alpinejs.dev/) - For JavaScript interactivity
+ - [ESbuild](https://esbuild.github.io/) - For JS building and bundling
  - [Aesthetic](https://æsthetic.dev/) - For cleaning up the outputted html after nunjucks messes it all up
  - [Eleventy Excellent](https://github.com/madrilene/eleventy-excellent) - For much inspiration
