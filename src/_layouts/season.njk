@@ -20,7 +20,7 @@ layout: base
       {% endif %}
       <h3 class="text-center">Meets and Results</h3>
       {% for event in events | sort(false, false,attribute='date') %}
-      <div class="divider divider-primary capitalize py-4">{{ event.name }}</div>
+      <div class="divider divider-primary capitalize py-4">{{ event.date | formatDateUTC('MM-DD-YYYY') }} - {{ event.name }}</div>
         {% if event.type == 'dual' %}
           {% include "partials/seasonMeetsDual.njk" %}
         {% elseif event.type == 'invite' %}

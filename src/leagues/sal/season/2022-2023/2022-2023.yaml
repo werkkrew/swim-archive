@@ -89,44 +89,33 @@ events:
           meets:
             - home: cbst
               away: udac
-              results: true
         - name: east
           meets:
             - home: cac
               away: naac
-              results: false
         - name: northwest
           meets:
             - home: mac
               away: npac
-              results: true
             - home: tops
               away: sacac
-              results: false
         - name: southwest
           meets:
             - home: wcac
-              away: lmac
-              results: false
         - name: crossover
           meets:
             - home: core
               away: umac
-              results: false
             - home: cr
               away: pwac
-              results: true
             - home: lmsd
               away: sac
-              results: false
             - home: dcaa
               away: hhaa
-              results: true
             - home: cca
               away: pac
             - home: pvac
               away: rac
-              results: false
     boys:
       name: boys
       division:
@@ -134,46 +123,35 @@ events:
           meets:
             - home: cbst
               away: udac
-              results: true
         - name: east
           meets:
             - home: cac
               away: naac
-              results: false
         - name: northwest
           meets:
             - home: npac
               away: mac
-              results: false
             - home: sacac
               away: tops
-              results: false
         - name: southwest
           meets:
             - home: lmac
               away: wcac
-              results: true
         - name: crossover
           meets:
             - home: core
               away: umac
-              results: false
             - home: pwac
               away: cr
-              results: true
             - home: lmsd
               away: sac
-              results: false
             - home: hhaa
               away: dcaa
-              results: false
             - home: pac
               away: cca
-              results: true
             - home: pvac
               away: rac
-              results: false
-  - name: Invitational - PVAC Fall Fest
+  - name: PVAC Fall Fest
     type: invite
     date: 2022-10-30
-    results: true
+    results: ['AM', 'PM']

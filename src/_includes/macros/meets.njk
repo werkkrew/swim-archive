@@ -1,7 +1,8 @@
 {# Macros for displaying swim meets and meet related things #}
 
 {# Figure out if there is an existing results file, if so, link to it. If not, show a tooltip. #}
-{% macro resultLink(event, meet, gender, page, raw=false) %}
+{# For standard dual meets and double dual meets #}
+{% macro resultLinkDual(event, meet, gender, page, raw=false) %}
   {% set relative = "results/" %}
   {% set path = page.inputPath | replace("index.njk", relative) %}
   {% set filename = event.date | formatDateUTC('YYYY-MM-DD') + "_" + gender.name + "_" + meet.home | upper + "vs" + meet.away | upper + ".html" %}
@@ -23,6 +24,42 @@
   {% endif %}
 {% endmacro %}
 
+{# Figure out if there is an existing results file, if so, link to it. If not, show a tooltip. #}
+{# For invitationals #}
+{% macro resultLinkInvite(event, page, raw=false) %}
+  {% set relative = "results/" %}
+  {% set path = page.inputPath | replace("index.njk", relative) %}
+  {% set name = event.name | replace(" ", "_") %}
+  {% set spacer = " / " %}
+
+  {% for result in event.results %}
+    {% if result == 'combined' %}
+      {% set filename = event.date | formatDateUTC('YYYY-MM-DD') + "_invitational_" + name + ".html" %}
+    {% else %}
+      {% set filename = event.date | formatDateUTC('YYYY-MM-DD') + "_invitational_" + name + "_" + result + ".html" %}
+    {% endif %}
+
+    {% set fileabs = path + filename %}
+
+    {% if raw %}
+      {% set link = relative + filename %}
+    {% else %}
+      {% set link = relative + filename | replace(".html", "/") %}
+    {% endif %}
+
+    {% if fileabs | fileExists %}
+      <a href="{{ link }}" target="_blank" class="link link-hover link-success">{{ result }}</a>
+    {% else %}
+      <div class="tooltip tooltip-error" data-tip="Results not found.">
+        <a href="" class="link link-hover link-error" onclick="return false;">{{ result }}</a>
+      </div>
+    {% endif %}
+    {% if not loop.last %}
+      {{ spacer }}
+    {%endif %}
+  {% endfor %}
+{% endmacro %}
+
 
 {# list all meets for a given event and gender by division #}
 {% macro listGenderMeets(gender, event, page, site) %}
@@ -33,7 +70,7 @@
       </tr>
       {% for meet in division.meets %}
         <tr>
-          <td class="hover:bg-neutral-800 hover:text-neutral-content">{{ resultLink(event, meet, gender, page) }}</td>
+          <td class="hover:bg-neutral-800 hover:text-neutral-content">{{ resultLinkDual(event, meet, gender, page) }}</td>
         </tr>
       {% endfor %}
     {% endfor %}
@@ -63,8 +100,14 @@
       </tr>
       {% for meet in division.meets %}
         <tr>
-          <td>{{ meet.home }} vs. {{ meet.away }}</td></tr>
+          <td>{{ meet.home }} vs. {{ meet.away }}</td>
+        </tr>
       {% endfor %}
     {% endfor %}
   {% endif %}
+{% endmacro %}
+
+{# list all "double dual" meets for a given event #}
+{% macro listInvitational(event, page) %}
+  {{ resultLinkInvite(event, page) }}
 {% endmacro %}

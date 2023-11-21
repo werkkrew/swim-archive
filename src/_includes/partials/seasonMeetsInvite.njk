@@ -1,1 +1,16 @@
-<h1>I have an invitational in my pants</h1>
+{% import "../macros/meets.njk" as macros %}
+
+<table class="table-fixed w-full not-prose text-center">
+  <thead>
+    <tr class="table-row border-neutral border-b-2 bg-neutral-700">
+        <th>{{ event.name }} Results</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-row">
+      <td class="border border-neutral-600 p-0 hover:bg-neutral-800 hover:text-neutral-content">
+        {{ macros.listInvitational(event, page) }}
+      </td>
+    </tr>
+  </tbody>
+</table>
