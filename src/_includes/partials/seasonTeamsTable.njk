@@ -7,7 +7,9 @@
   {% for team in teams %}
     <tr class="table-row border-neutral border-b last:border-b-0">
       <td class="bg-neutral-600 text-left text-lg text-neutral-content hover:bg-neutral-500 hover:text-neutral-200 p-2">
-        <a href="{{ team.website }}" target="_blank">{{ team.name }} ({{ team.code }})</a>
+        <a href="{{ team.website }}" target="_blank">
+          {{ team.name }} ({{ team.code }}{{" aka " + team.aka if team.aka else ""}})
+        </a>
       </td>
     </tr>
   {% endfor %}

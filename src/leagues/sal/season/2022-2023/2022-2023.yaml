@@ -15,6 +15,7 @@ league:
               website: https://www.dcaaswimming.org/
             - name: Lower Moreland Swimming
               code: LMOR
+              aka: LMSD
               website: https://www.lmswim.com/
             - name: Neshaminy Core Swimming
               code: CORE
@@ -51,12 +52,14 @@ league:
               website: https://www.teamunify.com/Home.jsp?team=manpac
             - name: Pennridge Aquatic Club
               code: PAC
+              aka: PR
               website: https://www.gomotionapp.com/team/recpapac/page/home
             - name: Perkiomen Valley Aquatic Club
               code: PVAC
               website: https://pvaquatic.com
             - name: Souderton Area Community Aquatic Club
               code: SACAC
+              aka: SOUD
               website: https://www.soudertonseahawks.com/page/home
             - name: Pottstown-Upper Perkiomen Swimming
               code: TOPS
@@ -71,6 +74,7 @@ league:
               website: https://www.gomotionapp.com/team/mapwac/page/home
             - name: Radnor Aquatic Club
               code: RAC
+              aka: RAD
               website: https://www.gomotionapp.com/team/marac/page/home
             - name: Upper Merion Aquatic Club
               code: UMAC
@@ -102,6 +106,7 @@ events:
         - name: southwest
           meets:
             - home: wcac
+              away: lmac
         - name: crossover
           meets:
             - home: core
@@ -153,5 +158,362 @@ events:
               away: rac
   - name: PVAC Fall Fest
     type: invite
+    pool: pvac
     date: 2022-10-30
-    results: ['AM', 'PM']
+    results: ['AM Session', 'PM Session']
+  - name: Second Dual Meets
+    type: dual
+    date: 2022-11-05
+    girls:
+      name: girls
+      division:
+        - name: central
+          meets:
+            - home: cbst
+              away: sac
+            - home: udac
+              away: hhaa
+        - name: east
+          meets:
+            - home: lmsd
+              away: dcaa
+        - name: northwest
+          meets:
+            - home: pac
+              away: pvac
+            - home: sacac
+              away: npac
+        - name: southwest
+          meets:
+            - home: wcac
+              away: rac
+        - name: crossover
+          meets:
+            - home: cr
+              away: umac
+            - home: cac
+              away: pwac
+            - home: core
+              away: umac
+            - home: cca
+              away: tops
+            - home: lmac
+              away: mac
+    boys:
+      name: boys
+      division:
+        - name: central
+          meets:
+            - home: sac
+              away: cbst
+            - home: hhaa
+              away: udac
+        - name: east
+          meets:
+            - home: dcaa
+              away: lmsd
+        - name: northwest
+          meets:
+            - home: pvac
+              away: pac
+            - home: sacac
+              away: npac
+        - name: southwest
+          meets:
+            - home: wcac
+              away: rac
+        - name: crossover
+          meets:
+            - home: cr
+              away: umac
+            - home: pwac
+              away: cac
+            - home: core
+              away: umac
+            - home: tops
+              away: cca
+            - home: mac
+              away: lmac
+  - name: HHAA High Five
+    type: invite
+    pool: hhaa
+    date: 2022-11-06
+    results: ['AM Session', 'PM Session']
+  - name: Third Dual Meets
+    type: dual
+    date: 2022-11-12
+    girls:
+      name: girls
+      division:
+        - name: central
+          meets:
+            - home: sac
+              away: udac
+        - name: east
+          meets:
+            - home: core
+              away: cr
+        - name: northwest
+          meets:
+            - home: sacac
+              away: pvac
+            - home: tops
+              away: pac
+        - name: crossover
+          meets:
+            - home: cac
+              away: umac
+            - home: pwac
+              away: naac
+            - home: cbst
+              away: dcaa
+            - home: hhaa
+              away: lmsd
+            - home: lmac
+              away: cca
+            - home: npac
+              away: rac
+            - home: wcac
+              away: mac
+    boys:
+      name: boys
+      division:
+        - name: central
+          meets:
+            - home: udac
+              away: sac
+        - name: east
+          meets:
+            - home: cr
+              away: core
+        - name: northwest
+          meets:
+            - home: pvac
+              away: sacac
+            - home: pac
+              away: tops
+        - name: crossover
+          meets:
+            - home: cac
+              away: umac
+            - home: pwac
+              away: naac
+            - home: dcaa
+              away: cbst
+            - home: lmsd
+              away: hhaa
+            - home: cca
+              away: lmac
+            - home: npac
+              away: rac
+            - home: mac
+              away: wcac
+  - name: Fourth Dual Meets
+    type: dual
+    date: 2022-11-19
+    girls:
+      name: girls
+      division:
+        - name: central
+          meets:
+            - home: sac
+              away: hhaa
+        - name: east
+          meets:
+            - home: cac
+              away: core
+            - home: cr
+              away: naac
+        - name: northwest
+          meets:
+            - home: pac
+              away: sacac
+            - home: mac
+              away: tops
+        - name: southwest
+          meets:
+            - home: pwac
+              away: umac
+            - home: lmac
+              away: rac
+        - name: crossover
+          meets:
+            - home: lmsd
+              away: cbst
+            - home: pvac
+              away: cca
+            - home: npac
+              away: wcac
+    boys:
+      name: boys
+      division:
+        - name: central
+          meets:
+            - home: hhaa
+              away: sac
+        - name: east
+          meets:
+            - home: cac
+              away: core
+            - home: cr
+              away: naac
+        - name: northwest
+          meets:
+            - home: sacac
+              away: pac
+            - home: tops
+              away: mac
+        - name: southwest
+          meets:
+            - home: pwac
+              away: umac
+            - home: lmac
+              away: rac
+        - name: crossover
+          meets:
+            - home: cbst
+              away: lmsd
+            - home: pvac
+              away: cca
+            - home: wcac
+              away: npac
+    doubles:
+      name: double
+      division:
+        - name: crossover
+          meets:
+            - home: udac
+              away: dcaa
+  - name: NPAC Trophy Meet
+    type: invite
+    pool: npac
+    date: 2022-11-20
+    results: ['Session 1', 'Session 2', 'Session 3']
+  - name: Fifth Dual Meets
+    type: dual
+    date: 2022-12-03
+    girls:
+      name: girls
+      division:
+        - name: central
+          meets:
+            - home: hhaa
+              away: cbst
+        - name: east
+          meets:
+            - home: cr
+              away: cac
+        - name: northwest
+          meets:
+            - home: pvac
+              away: tops
+        - name: crossover
+          meets:
+            - home: pwac
+              away: core
+            - home: naac
+              away: umac
+            - home: dcaa
+              away: sac
+            - home: lmsd
+              away: udac
+            - home: sacac
+              away: cca
+            - home: pac
+              away: wcac
+            - home: mac
+              away: rac
+            - home: npac
+              away: lmac
+    boys:
+      name: boys
+      division:
+        - name: central
+          meets:
+            - home: cbst
+              away: hhaa
+        - name: east
+          meets:
+            - home: cr
+              away: cac
+        - name: northwest
+          meets:
+            - home: tops
+              away: pvac
+        - name: crossover
+          meets:
+            - home: core
+              away: pwac
+            - home: naac
+              away: umac
+            - home: sac
+              away: dcaa
+            - home: udac
+              away: lmsd
+            - home: cca
+              away: sacac
+            - home: wcac
+              away: pac
+            - home: mac
+              away: rac
+            - home: lmac
+              away: npac
+  - name: CBST Holiday Classic
+    type: invite
+    pool: cbst
+    date: 2022-12-04
+    results: ['AM Session', 'PM Session']
+  - name: Conference Finals
+    type: dual
+    date: 2022-12-10
+    girls:
+      name: girls
+      division:
+        - name: crossover
+          meets:
+            - home: wcac
+              away: sac
+            - home: dcaa
+              away: pac
+            - home: sacac
+              away: lmac
+            - home: mac
+              away: pvac
+            - home: core
+              away: lmsd
+            - home: udac
+              away: cr
+            - home: cac
+              away: hhaa
+            - home: cca
+              away: rac
+    boys:
+      name: boys
+      division:
+        - name: crossover
+          meets:
+            - home: sac
+              away: wcac
+            - home: pac
+              away: dcaa
+            - home: lmac
+              away: sacac
+            - home: pvac
+              away: mac
+            - home: core
+              away: lmsd
+            - home: udac
+              away: cr
+            - home: cac
+              away: hhaa
+            - home: cca
+              away: rac
+    doubles:
+      name: double
+      division:
+        - name: crossover
+          meets:
+            - home: cbst
+              away: naac
+            - home: npac
+              away: tops

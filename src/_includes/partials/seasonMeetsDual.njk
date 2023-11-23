@@ -17,10 +17,10 @@
     <tr class="table-row border-neutral border-b-2 bg-neutral-700">
       {# Two columns if gendered, one if not. #}
       {% if genderMeets %}
-        <th class="border border-neutral-600">Girls</th>
         <th class="border border-neutral-600">Boys</th>
+        <th class="border border-neutral-600">Girls</th>
       {% else %}
-        <th>Double Duals</th>
+        <th class="border border-neutral-600">Double Duals</th>
       {% endif %}
     </tr>
   </thead>
@@ -28,10 +28,10 @@
     {% if genderMeets %}
     <tr class="table-row">
       <td class="border border-neutral-600 p-0">
-        {{ macros.listGenderMeets(girls, event, page) }}
+        {{ macros.listGenderMeets(boys, event, page) }}
       </td>
       <td class="border border-neutral-600 p-0">
-        {{ macros.listGenderMeets(boys, event, page) }}
+        {{ macros.listGenderMeets(girls, event, page) }}
       </td>
     </tr>
       {% if doubles %}
