@@ -10,7 +10,7 @@
   {% set doubles = event.doubles %}
 {% endif %}
 
-{% import "../macros/meets.njk" as macros %}
+{% import "../macros/meets.njk" as meets %}
 
 <table class="table-fixed w-full not-prose text-center">
   <thead>
@@ -28,17 +28,17 @@
     {% if genderMeets %}
     <tr class="table-row">
       <td class="border border-neutral-600 p-0">
-        {{ macros.listGenderMeets(boys, event, page) }}
+        {{ meets.listGenderMeets(event, boys, page) }}
       </td>
       <td class="border border-neutral-600 p-0">
-        {{ macros.listGenderMeets(girls, event, page) }}
+        {{ meets.listGenderMeets(event, girls, page) }}
       </td>
     </tr>
       {% if doubles %}
-        {{ macros.listDoubleMeets(doubles, event, page) }}
+        {{ meets.listDoubleMeets(event, doubles, page) }}
       {% endif %}
     {% else %}
-      {{ macros.listDoubleMeets(doubles, event, page, true) }}
+      {{ meets.listDoubleMeets(event, doubles, page, true) }}
     {% endif %}
   </tbody>
 </table>

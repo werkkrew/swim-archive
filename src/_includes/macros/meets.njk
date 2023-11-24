@@ -1,76 +1,21 @@
 {# Macros for displaying swim meets and meet related things #}
 
-{# Figure out if there is an existing results file, if so, link to it. If not, show a tooltip. #}
-{# For standard dual meets #}
-{% macro resultLinkDual(event, meet, gender, page, raw=false) %}
-  {% set relative = "results/" %}
-  {% set path = page.inputPath | replace("index.njk", relative) %}
-  {% set filename = event.date | formatDateUTC('YYYY-MM-DD') + "_" + gender.name + "_" + meet.home | upper + "vs" + meet.away | upper + ".html" %}
-  
-  {% set fileabs = path + filename %}
-
-  {% if raw %}
-    {% set link = relative + filename %}
-  {% else %}
-    {% set link = relative + filename | replace(".html", "/") %}
-  {% endif %}
-
-  {% if fileabs | fileExists %}
-    <a href="{{ link }}" target="_blank" class="link link-hover link-success">{{ meet.home | upper }} vs. {{ meet.away | upper }}</a>
-  {% else %}
-    <div class="tooltip tooltip-error" data-tip="Results not found.">
-      <a href="" class="link link-hover link-error" onclick="return false;">{{ meet.home | upper }} vs. {{ meet.away | upper }}</a>
-    </div>
-  {% endif %}
-{% endmacro %}
-
-{# Figure out if there is an existing results file, if so, link to it. If not, show a tooltip. #}
-{# For invitationals #}
-{% macro resultLinkInvite(event, page, raw=false) %}
-  {% set relative = "results/" %}
-  {% set path = page.inputPath | replace("index.njk", relative) %}
-  {% set name = event.name | replace(" ", "_") %}
-  {% set spacer = " / " %}
-
-  {% for result in event.results %}
-    {% if result == 'combined' %}
-      {% set filename = event.date | formatDateUTC('YYYY-MM-DD') + "_invitational_" + name + ".html" %}
-    {% else %}
-      {% set filename = event.date | formatDateUTC('YYYY-MM-DD') + "_invitational_" + name + "_" + result | replace(" ", "_") + ".html" %}
-    {% endif %}
-
-    {% set fileabs = path + filename %}
-
-    {% if raw %}
-      {% set link = relative + filename %}
-    {% else %}
-      {% set link = relative + filename | replace(".html", "/") %}
-    {% endif %}
-
-    {% if fileabs | fileExists %}
-      <a href="{{ link }}" target="_blank" class="link link-hover link-success">{{ result }}</a>
-    {% else %}
-      <div class="tooltip tooltip-error" data-tip="Results not found.">
-        <a href="" class="link link-hover link-error" onclick="return false;">{{ result }}</a>
-      </div>
-    {% endif %}
-    {% if not loop.last %}
-      {{ spacer }}
-    {%endif %}
-  {% endfor %}
-{% endmacro %}
-
+{% import "../macros/results.njk" as results %}
 
 {# list all meets for a given event and gender by division #}
-{% macro listGenderMeets(gender, event, page, site) %}
+{% macro listGenderMeets(event, gender, page) %}
   <table class="table-auto w-full not-prose text-center border-0">
     {% for division in gender.division %}
-      <tr>
-        <td class="capitalize bg-neutral-600">{{ division.name }}</td>
-      </tr>
+      {% if division.name != "none" %}
+        <tr>
+          <td class="capitalize bg-neutral-600">
+            {{ division.name }}
+          </td>
+        </tr>
+      {% endif %}
       {% for meet in division.meets %}
         <tr>
-          <td class="hover:bg-neutral-800 hover:text-neutral-content">{{ resultLinkDual(event, meet, gender, page) }}</td>
+          <td class="hover:bg-neutral-800 hover:text-neutral-content">{{ results.resultLinkDual(event, meet, gender, page) }}</td>
         </tr>
       {% endfor %}
     {% endfor %}
@@ -78,21 +23,23 @@
 {% endmacro %}
 
 {# list all "double dual" meets for a given event #}
-{% macro listDoubleMeets(doubles, event, page, only=false) %}
+{% macro listDoubleMeets(event, doubles, page, only=false) %}
   {% if not only %}
     <tr class="table-row border-neutral border-b-2 bg-neutral-700">
       <th class="border border-neutral-600" colspan="2">Double Duals</th>
     </tr>
     {% for division in doubles.division %}
-      <tr class="table-row border border-neutral-600 p-0">
-        <td colspan="2" class="capitalize bg-neutral-600">
-          {{ division.name }}
-        </td>
-      </tr>
+      {% if division.name != "none" %}
+        <tr class="table-row border border-neutral-600 p-0">
+          <td colspan="2" class="capitalize bg-neutral-600">
+            {{ division.name }}
+          </td>
+        </tr>
+      {% endif %}
       {% for meet in division.meets %}
         <tr class="border border-neutral-600 p-0">
           <td colspan="2" class="hover:bg-neutral-800 hover:text-neutral-content">
-            {{ resultLinkDual(event, meet, doubles, page) }}
+            {{ results.resultLinkDual(event, meet, doubles, page) }}
           </td>
         </tr>
       {% endfor %}
@@ -113,5 +60,21 @@
 
 {# list results for an invitational #}
 {% macro listInvitational(event, page) %}
-  {{ resultLinkInvite(event, page) }}
+  {{ results.resultLinkInvite(event, page) }}
+{% endmacro %}
+
+{# list results for an b-champs #}
+{% macro listBChamps(event, page) %}
+  {% for result in event.results %}
+    <tr class="table-row border border-neutral-600 p-0">
+      <td class="capitalize bg-neutral-600">
+        {{ result.division }}
+      </td>
+    </tr>
+    <tr class="border border-neutral-600 p-0">
+      <td class="hover:bg-neutral-800 hover:text-neutral-content">
+        {{ results.resultLinkBChamps(event, result, page) }}
+      </td>
+    </tr>
+  {% endfor %}
 {% endmacro %}

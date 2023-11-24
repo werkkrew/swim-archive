@@ -10,30 +10,30 @@ league:
             - name: Council Rock Community Aquatics
               code: CR
               website: https://www.crsd.org/aquatics
-            - name: Dolphins Community Aquatics Association
-              code: DCAA
-              website: https://www.dcaaswimming.org/
-            - name: Lower Moreland Swimming
-              code: LMOR
-              aka: LMSD
-              website: https://www.lmswim.com/
             - name: Neshaminy Core Swimming
               code: CORE
               website: https://coreswimming.com
             - name: Norristown Area Aquatic Club
               code: NAAC
               website: https://www.gomotionapp.com/team/usapanaac/page/home
+            - name: Plymouth-Whitemarsh Aquatic Club
+              code: PWAC
+              website: https://www.gomotionapp.com/team/mapwac/page/home
         - name: central
           teams:
             - name: Central Bucks Swim Team
               code: CBST
               website: https://cbswimanddive.com/
-            - name: Colonial Community Aquatics
-              code: CCA
-              website: https://www.gomotionapp.com/team/macca/page/home
+            - name: Dolphins Community Aquatics Association
+              code: DCAA
+              website: https://www.dcaaswimming.org/
             - name: Hatboro-Horsham Aquatics Association
               code: HHAA
               website: https://www.gomotionapp.com/team/mahha/page/home
+            - name: Lower Moreland Swimming
+              code: LMOR
+              aka: LMSD
+              website: https://www.lmswim.com/
             - name: Springfield Aquatic Club
               code: SAC
               website: https://www.gomotionapp.com/team/masac/page/home
@@ -44,12 +44,9 @@ league:
       divisions:
         - name: northwest
           teams:
-            - name: Methacton Aquatic Club
-              code: MAC
-              website: https://www.teamunify.com/Home.jsp?team=mamac
-            - name: North Penn Aquatic Club
-              code: NPAC
-              website: https://www.teamunify.com/Home.jsp?team=manpac
+            - name: Colonial Community Aquatics
+              code: CCA
+              website: https://www.gomotionapp.com/team/macca/page/home
             - name: Pennridge Aquatic Club
               code: PAC
               aka: PR
@@ -69,9 +66,12 @@ league:
             - name: Lower Merion Aquatic Club
               code: LMAC
               website: https://www.gomotionapp.com/team/malmac/page/home
-            - name: Plymouth-Whitemarsh Aquatic Club
-              code: PWAC
-              website: https://www.gomotionapp.com/team/mapwac/page/home
+            - name: Methacton Aquatic Club
+              code: MAC
+              website: https://www.teamunify.com/Home.jsp?team=mamac
+            - name: North Penn Aquatic Club
+              code: NPAC
+              website: https://www.teamunify.com/Home.jsp?team=manpac
             - name: Radnor Aquatic Club
               code: RAC
               aka: RAD
@@ -93,16 +93,24 @@ events:
           meets:
             - home: cbst
               away: udac
+            - home: lmsd
+              away: sac
+            - home: dcaa
+              away: hhaa
         - name: east
           meets:
             - home: cac
               away: naac
+            - home: cr
+              away: pwac
         - name: northwest
           meets:
             - home: mac
               away: npac
             - home: tops
               away: sacac
+            - home: cca
+              away: pac
         - name: southwest
           meets:
             - home: wcac
@@ -111,14 +119,6 @@ events:
           meets:
             - home: core
               away: umac
-            - home: cr
-              away: pwac
-            - home: lmsd
-              away: sac
-            - home: dcaa
-              away: hhaa
-            - home: cca
-              away: pac
             - home: pvac
               away: rac
     boys:
@@ -128,16 +128,24 @@ events:
           meets:
             - home: cbst
               away: udac
+            - home: lmsd
+              away: sac
+            - home: hhaa
+              away: dcaa
         - name: east
           meets:
             - home: cac
               away: naac
+            - home: pwac
+              away: cr
         - name: northwest
           meets:
             - home: npac
               away: mac
             - home: sacac
               away: tops
+            - home: pac
+              away: cca
         - name: southwest
           meets:
             - home: lmac
@@ -146,14 +154,6 @@ events:
           meets:
             - home: core
               away: umac
-            - home: pwac
-              away: cr
-            - home: lmsd
-              away: sac
-            - home: hhaa
-              away: dcaa
-            - home: pac
-              away: cca
             - home: pvac
               away: rac
   - name: PVAC Fall Fest
@@ -173,32 +173,32 @@ events:
               away: sac
             - home: udac
               away: hhaa
-        - name: east
-          meets:
             - home: lmsd
               away: dcaa
+        - name: east
+          meets:
+            - home: cac
+              away: pwac
         - name: northwest
           meets:
             - home: pac
               away: pvac
-            - home: sacac
-              away: npac
+            - home: cca
+              away: tops
         - name: southwest
           meets:
             - home: wcac
               away: rac
+            - home: lmac
+              away: mac
         - name: crossover
           meets:
             - home: cr
               away: umac
-            - home: cac
-              away: pwac
             - home: core
               away: umac
-            - home: cca
-              away: tops
-            - home: lmac
-              away: mac
+            - home: sacac
+              away: npac
     boys:
       name: boys
       division:
@@ -208,32 +208,32 @@ events:
               away: cbst
             - home: hhaa
               away: udac
-        - name: east
-          meets:
             - home: dcaa
               away: lmsd
+        - name: east
+          meets:
+            - home: pwac
+              away: cac
         - name: northwest
           meets:
             - home: pvac
               away: pac
-            - home: sacac
-              away: npac
+            - home: tops
+              away: cca
         - name: southwest
           meets:
             - home: wcac
               away: rac
+            - home: mac
+              away: lmac
         - name: crossover
           meets:
             - home: cr
               away: umac
-            - home: pwac
-              away: cac
             - home: core
               away: umac
-            - home: tops
-              away: cca
-            - home: mac
-              away: lmac
+            - home: sacac
+              away: npac
   - name: HHAA High Five
     type: invite
     pool: hhaa
@@ -249,32 +249,34 @@ events:
           meets:
             - home: sac
               away: udac
+            - home: cbst
+              away: dcaa
+            - home: hhaa
+              away: lmsd
         - name: east
           meets:
             - home: core
               away: cr
+            - home: pwac
+              away: naac
         - name: northwest
           meets:
             - home: sacac
               away: pvac
             - home: tops
               away: pac
-        - name: crossover
+        - name: southwest
           meets:
-            - home: cac
-              away: umac
-            - home: pwac
-              away: naac
-            - home: cbst
-              away: dcaa
-            - home: hhaa
-              away: lmsd
-            - home: lmac
-              away: cca
             - home: npac
               away: rac
             - home: wcac
               away: mac
+        - name: crossover
+          meets:
+            - home: cac
+              away: umac
+            - home: lmac
+              away: cca
     boys:
       name: boys
       division:
@@ -282,32 +284,34 @@ events:
           meets:
             - home: udac
               away: sac
+            - home: dcaa
+              away: cbst
+            - home: lmsd
+              away: hhaa
         - name: east
           meets:
             - home: cr
               away: core
+            - home: pwac
+              away: naac
         - name: northwest
           meets:
             - home: pvac
               away: sacac
             - home: pac
               away: tops
-        - name: crossover
+        - name: southwest
           meets:
-            - home: cac
-              away: umac
-            - home: pwac
-              away: naac
-            - home: dcaa
-              away: cbst
-            - home: lmsd
-              away: hhaa
-            - home: cca
-              away: lmac
             - home: npac
               away: rac
             - home: mac
               away: wcac
+        - name: crossover
+          meets:
+            - home: cac
+              away: umac
+            - home: cca
+              away: lmac
   - name: Fourth Dual Meets
     type: dual
     date: 2022-11-19
@@ -318,32 +322,32 @@ events:
           meets:
             - home: sac
               away: hhaa
+            - home: lmsd
+              away: cbst
         - name: east
           meets:
             - home: cac
               away: core
-            - home: cr
-              away: naac
         - name: northwest
           meets:
             - home: pac
               away: sacac
-            - home: mac
-              away: tops
-        - name: southwest
-          meets:
-            - home: pwac
-              away: umac
-            - home: lmac
-              away: rac
-        - name: crossover
-          meets:
-            - home: lmsd
-              away: cbst
             - home: pvac
               away: cca
+        - name: southwest
+          meets:
+            - home: lmac
+              away: rac
             - home: npac
               away: wcac
+        - name: crossover
+          meets:
+            - home: cr
+              away: naac
+            - home: mac
+              away: tops
+            - home: pwac
+              away: umac
     boys:
       name: boys
       division:
@@ -351,36 +355,36 @@ events:
           meets:
             - home: hhaa
               away: sac
+            - home: cbst
+              away: lmsd
         - name: east
           meets:
             - home: cac
               away: core
-            - home: cr
-              away: naac
         - name: northwest
           meets:
             - home: sacac
               away: pac
-            - home: tops
-              away: mac
-        - name: southwest
-          meets:
-            - home: pwac
-              away: umac
-            - home: lmac
-              away: rac
-        - name: crossover
-          meets:
-            - home: cbst
-              away: lmsd
             - home: pvac
               away: cca
+        - name: southwest
+          meets:
+            - home: lmac
+              away: rac
             - home: wcac
               away: npac
+        - name: crossover
+          meets:
+            - home: cr
+              away: naac
+            - home: tops
+              away: mac
+            - home: pwac
+              away: umac
     doubles:
       name: double
       division:
-        - name: crossover
+        - name: central
           meets:
             - home: udac
               away: dcaa
@@ -399,32 +403,34 @@ events:
           meets:
             - home: hhaa
               away: cbst
-        - name: east
-          meets:
-            - home: cr
-              away: cac
-        - name: northwest
-          meets:
-            - home: pvac
-              away: tops
-        - name: crossover
-          meets:
-            - home: pwac
-              away: core
-            - home: naac
-              away: umac
             - home: dcaa
               away: sac
             - home: lmsd
               away: udac
+        - name: east
+          meets:
+            - home: cr
+              away: cac
+            - home: pwac
+              away: core
+        - name: northwest
+          meets:
+            - home: pvac
+              away: tops
             - home: sacac
               away: cca
-            - home: pac
-              away: wcac
+        - name: southwest
+          meets:
             - home: mac
               away: rac
             - home: npac
               away: lmac
+        - name: crossover
+          meets:
+            - home: naac
+              away: umac
+            - home: pac
+              away: wcac
     boys:
       name: boys
       division:
@@ -432,32 +438,34 @@ events:
           meets:
             - home: cbst
               away: hhaa
-        - name: east
-          meets:
-            - home: cr
-              away: cac
-        - name: northwest
-          meets:
-            - home: tops
-              away: pvac
-        - name: crossover
-          meets:
-            - home: core
-              away: pwac
-            - home: naac
-              away: umac
             - home: sac
               away: dcaa
             - home: udac
               away: lmsd
+        - name: east
+          meets:
+            - home: cr
+              away: cac
+            - home: core
+              away: pwac
+        - name: northwest
+          meets:
+            - home: tops
+              away: pvac
             - home: cca
               away: sacac
-            - home: wcac
-              away: pac
+        - name: southwest
+          meets:
             - home: mac
               away: rac
             - home: lmac
               away: npac
+        - name: crossover
+          meets:
+            - home: naac
+              away: umac
+            - home: wcac
+              away: pac
   - name: CBST Holiday Classic
     type: invite
     pool: cbst
@@ -466,10 +474,11 @@ events:
   - name: Conference Finals
     type: dual
     date: 2022-12-10
+    note: PWAC and UMAC did not participate in the Conference or League Finals.
     girls:
       name: girls
       division:
-        - name: crossover
+        - name: none
           meets:
             - home: wcac
               away: sac
@@ -490,7 +499,7 @@ events:
     boys:
       name: boys
       division:
-        - name: crossover
+        - name: none
           meets:
             - home: sac
               away: wcac
@@ -511,9 +520,87 @@ events:
     doubles:
       name: double
       division:
-        - name: crossover
+        - name: none
           meets:
             - home: cbst
               away: naac
             - home: npac
               away: tops
+  - name: League Finals
+    type: dual
+    date: 2023-01-07
+    girls:
+      name: girls
+      division:
+        - name: none
+          meets:
+            - home: wcac
+              away: hhaa
+            - home: pac
+              away: lmsd
+            - home: sac
+              away: tops
+            - home: sacac
+              away: cbst
+            - home: pvac
+              away: dcaa
+            - home: lmac
+              away: npac
+            - home: cr
+              away: rac
+            - home: udac
+              away: mac
+    boys:
+      name: boys
+      division:
+        - name: none
+          meets:
+            - home: hhaa
+              away: wcac
+            - home: lmsd
+              away: pac
+            - home: tops
+              away: sac
+            - home: cbst
+              away: sacac
+            - home: dcaa
+              away: pvac
+            - home: mac
+              away: lmac
+            - home: cr
+              away: rac
+            - home: npac
+              away: udac
+    doubles:
+      name: double
+      division:
+        - name: none
+          meets:
+            - home: cca
+              away: naac
+            - home: cac
+              away: core
+  - name: Division Champs (B-Champs)
+    type: bchamps
+    date: 2023-01-21
+    results:
+      - division: central
+        type:
+          - name: combined
+            pool: udac
+      - division: east
+        type:
+          - name: combined
+            pool: cr
+      - division: northwest
+        type:
+          - name: girls
+            pool: sacac
+          - name: boys
+            pool: pac
+      - division: southwest
+        type:
+          - name: combined
+            pool: wcac
+  - name: League Champs (A-Champs)
+    type: achamps
