@@ -31,6 +31,20 @@
       <div class="min-h-screen flex flex-col relative overflow-hidden">
         {{ content | safe }}
       </div>
+      <!-- scroll to top button -->
+      <div x-data="{scrollBackTop: false}" x-cloak>
+        <button
+         x-show="scrollBackTop"
+         x-on:scroll.window="scrollBackTop = (window.pageYOffset > window.outerHeight * 0.5) ? true : false"
+         x-on:click="window.scrollTo({top: 0, behavior: 'smooth'})"
+         aria-label="Back to top"
+         class="fixed w-14 h-14 bottom-0 right-0 border-0 p-4 mx-8 my-10 text-white bg-neutral hover:bg-neutral-600 shadow-md rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z" />
+          </svg>
+       </button>
+      </div>
+      <!-- end scroll to top button -->
     </main>
     {% include "partials/footer.njk" %}
   </body>
