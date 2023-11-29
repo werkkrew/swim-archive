@@ -604,3 +604,6 @@ events:
             pool: wcac
   - name: League Champs (A-Champs)
     type: achamps
+    date: 2023-01-22
+    pool: LaSalle
+    results: ['Boys', 'Girls']

@@ -26,12 +26,9 @@ layout: base
         {% if event.type == 'dual' %}
           <div class="divider divider-primary capitalize py-4">{{ event.date | formatDateUTC('MM-DD-YYYY') }} - {{ event.name }}</div>
           {% include "partials/seasonMeetsDual.njk" %}
-        {% elseif event.type == 'invite' %}
+        {% else %}
           <div class="divider divider-secondary capitalize py-4">{{ event.date | formatDateUTC('MM-DD-YYYY') }} - {{ event.name }}</div>
-          {% include "partials/seasonMeetsInvite.njk" %}
-        {% elseif event.type == 'bchamps' %}
-          <div class="divider divider-secondary capitalize py-4">{{ event.date | formatDateUTC('MM-DD-YYYY') }} - {{ event.name }}</div>
-          {% include "partials/seasonMeetsBChamps.njk" %}          
+          {% include "partials/seasonMeetsOther.njk" %}       
         {% endif %}
       {% endfor %}
     {% else %}

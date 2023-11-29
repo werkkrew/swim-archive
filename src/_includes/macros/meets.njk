@@ -63,7 +63,7 @@
   {{ results.resultLinkInvite(event, page) }}
 {% endmacro %}
 
-{# list results for an b-champs #}
+{# list results for b-champs #}
 {% macro listBChamps(event, page) %}
   {% for result in event.results %}
     <tr class="table-row border border-neutral-600 p-0">
@@ -77,4 +77,9 @@
       </td>
     </tr>
   {% endfor %}
+{% endmacro %}
+
+{# list results for a-champs #}
+{% macro listAChamps(event, page) %}
+  {{ results.resultLinkAChamps(event, page) }}
 {% endmacro %}

@@ -3,13 +3,19 @@
 <table class="table-fixed w-full not-prose text-center">
   <thead>
     <tr class="table-row border-neutral border-b-2 bg-neutral-700">
-        <th>{{ event.name }} Results</th>
+        <th class="border border-neutral-600">{{ event.name }} Results</th>
     </tr>
   </thead>
   <tbody>
     <tr class="table-row">
       <td class="border border-neutral-600 p-0 hover:bg-neutral-800 hover:text-neutral-content">
-        {{ meets.listBChamps(event, page) }}
+        {% if event.type == "invite" %}
+          {{ meets.listInvitational(event, page) }}
+        {% elseif event.type == "bchamps" %}
+          {{ meets.listBChamps(event, page) }}
+        {% elseif event.type == "achamps" %}
+          {{ meets.listAChamps(event, page) }}
+        {% endif %}
       </td>
     </tr>
   </tbody>
