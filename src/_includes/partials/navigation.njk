@@ -5,7 +5,7 @@
       <label tabindex="0" class="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"/> </svg>
       </label>
-      <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-300 mt-3 z-[1] p-2 shadow rounded-box w-52">
+      <ul tabindex="0" class="menu menu-md dropdown-content bg-base-300 mt-3 z-[1] p-2 shadow rounded-box w-72">
         {% for entry in navPages %}
           <li>
             <a {% if entry.url == page.url %} class="active" {% endif %} href="{{ entry.url }}">{{ entry.title }}</a>
@@ -25,7 +25,7 @@
     <a class="btn btn-ghost normal-case text-xl" href="/">{{ site.title }}</a>
   </div>
   <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
+    <ul class="menu menu-lg menu-horizontal px-1">
       {% for entry in navPages %}
         {% if entry.children.length %}
           <div class="dropdown dropdown-hover">
@@ -41,7 +41,7 @@
                 </svg>
               </a>
             </li>
-            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-300 rounded-box w-52">
+            <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-300 rounded-box w-72">
               {% for child in entry.children %}
                 <li>
                   <a {% if child.url in page.url %} class="active" {% endif %} href="{{ child.url }}">{{ child.title }}</a>

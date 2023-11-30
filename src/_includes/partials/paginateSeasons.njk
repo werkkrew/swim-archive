@@ -1,5 +1,0 @@
-{% set previousSeason = seasons.previousPageLink %}
-{% set nextSeason = seasons.nextPageLink %}
-{% if previousSeason %}Previous: <a href="{{ seasons.previousPageHref  }}">{{ previousSeason.data.name }}</a>{% endif %}
-<br>
-{% if nextSeason %}Next: <a href="{{ nextSeason.url }}">{{ nextSeason.data.name }}</a>{% endif %}

@@ -1,0 +1,19 @@
+{# "paginate" the seasons by creating next/previous links via custom collection iteration #}
+
+{% set parentPage = collections.all | eleventyNavigationBreadcrumb(league,{ includeSelf: true }) | last %}
+
+{% set seasonCollection = abbr + "Seasons" %}  {# e.g. salSeasons #}
+{% set seasons = collections[seasonCollection] %}
+
+{% set previousSeason = seasons | getPreviousCollectionItem %}
+{% set nextSeason = seasons | getNextCollectionItem %}
+
+<div class="join grid grid-cols-3">
+  <a class="join-item btn btn-xs sm:btn-sm md:btn-md btn-outline 
+    {{ "btn-disabled" if not previousSeason }}" 
+    href="{{ previousSeason.url }}">{{ "Previous Season" if not previousSeason else previousSeason.data.name }}</a>
+  <a class="join-item btn btn-xs sm:btn-sm md:btn-md btn-outline" href="{{ parentPage.url }}">{{ parentPage.title }}</a>
+  <a class="join-item btn btn-xs sm:btn-sm md:btn-md btn-outline 
+    {{ "btn-disabled" if not nextSeason }}" 
+    href="{{ nextSeason.url }}">{{ "Next Season" if not nextSeason else nextSeason.data.name }}</a>
+</div>
