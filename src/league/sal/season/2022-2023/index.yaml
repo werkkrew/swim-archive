@@ -1,4 +1,4 @@
-league:
+structure:
   conferences:
     - name: american
       divisions:

@@ -1,17 +1,15 @@
 ---
-title: USA Swimming
-name: USA Swimming - Middle Atlantic
+league: USA Swimming
+abbr: usa
 homepage: https://maswim.org
 results: https://maswim.org
 description: USA Swimming in the national governing body for competitive swimming in the United States. Middle Atlantic is the Local Swimming Committee (LSC) for the region the Perkiomen Valley Aquatic Club competes in. Sanctioned USA meets have a much more rigorous set of standards applied to the protocols and officiating, as such, only times from sanctioned USA meets are valid for certain purposes.
 tags: ['league', 'usa']
 layout: league
-eleventyNavigation:
-  parent: Leagues
-  key: USA Swimming
-pagination:
-  data: collections.usaSeasons
-  size: 100
-  alias: seasons
-  reverse: true
+eleventyComputed:
+  title: '{{ league }}'
+  name: '{{ league }} - Middle Atlantic'
+  eleventyNavigation:
+    parent: Leagues
+    key: '{{ league }}'
 ---

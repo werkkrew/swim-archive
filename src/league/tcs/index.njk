@@ -1,17 +1,15 @@
 ---
-title: Tri-County Swim League
-name: Tri-County Swim League
+league: Tri-County Swim League
+abbr: tcs
 homepage: https://tricountyswim.net
 results: https://tricountyswim.net
 description: The Tri-County swim league is a casual summer swim league consisting of several teams from southeastern Pennsylvania. The teams are primarily from local pool clubs where the members of the pool can join the swim team affiliated with the club. The season runs from when school lets out until roughly the end of July each summer.
 tags: ['league', 'tcs']
 layout: league
-eleventyNavigation:
-  parent: Leagues
-  key: Tri-County Swim
-pagination:
-  data: collections.tcsSeasons
-  size: 100
-  alias: seasons
-  reverse: true
+eleventyComputed:
+  title: '{{ league }}'
+  name: '{{ league }}'
+  eleventyNavigation:
+    parent: Leagues
+    key: '{{ league }}'
 ---

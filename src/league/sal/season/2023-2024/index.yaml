@@ -1,4 +1,4 @@
-league:
+structure:
   divisions:
     - name: east
       teams:

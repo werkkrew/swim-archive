@@ -1,5 +1,5 @@
-{% set previousSeason = collections.usaSeasons | getPreviousCollectionItem(page) %}
-{% set nextSeason = collections.usaSeasons | getNextCollectionItem(page) %}
-{% if previousSeason %}Previous: <a href="{{ previousSeason.url }}">{{ previousSeason.data.name }}</a>{% endif %}
+{% set previousSeason = seasons.previousPageLink %}
+{% set nextSeason = seasons.nextPageLink %}
+{% if previousSeason %}Previous: <a href="{{ seasons.previousPageHref  }}">{{ previousSeason.data.name }}</a>{% endif %}
 <br>
 {% if nextSeason %}Next: <a href="{{ nextSeason.url }}">{{ nextSeason.data.name }}</a>{% endif %}

@@ -1,5 +1,5 @@
 ---
-league:
+structure:
   teams:
     - name: team1
       website: google
