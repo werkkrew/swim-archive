@@ -14,7 +14,7 @@ const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 // other utilities
 const esthetic = require('./config/transforms/esthetic.js');
 const yaml = require('js-yaml');
-const {slugifyString} = require('./config/utilities');
+const { slugifyString } = require('./config/utilities');
 
 // module import collections
 const {
